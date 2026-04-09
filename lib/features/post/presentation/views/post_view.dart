@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_icon_class/font_awesome_icon_class.dart';
-import 'package:taske_app/core/utls/app_style.dart';
+import 'package:taske_app/features/post/presentation/views/widgets/create_new_post.dart';
 import 'package:taske_app/features/post/presentation/views/widgets/custom_floating_action_button.dart';
 import 'package:taske_app/features/post/presentation/views/widgets/post_viewBody.dart';
 
@@ -32,7 +32,7 @@ class PostView extends StatelessWidget {
           ),
         ],
       ),
-      body: PostViewbody(),
+      body: PostViewBody(),
       floatingActionButton: CustomFloatingActionButton(),
     );
   }

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:taske_app/features/post/presentation/views/widgets/post.dart';
 
-class PostViewbody extends StatelessWidget {
-  const PostViewbody({super.key});
+class PostViewBody extends StatelessWidget {
+  const PostViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {

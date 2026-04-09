@@ -1,11 +1,8 @@
-
-
 import 'package:flutter/material.dart';
+import 'package:taske_app/features/post/presentation/views/widgets/create_new_post.dart';
 
 class CustomFloatingActionButton extends StatelessWidget {
-  const CustomFloatingActionButton({
-    super.key,
-  });
+  const CustomFloatingActionButton({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,11 +10,22 @@ class CustomFloatingActionButton extends StatelessWidget {
       elevation: 0,
       backgroundColor: Colors.deepOrangeAccent,
       shape: CircleBorder(),
-      onPressed: () {},
-      child: IconButton(
-        onPressed: () {},
-        icon: Icon(Icons.add, color: Colors.white),
-      ),
+      onPressed: () {
+        showModalBottomSheet(
+          isScrollControlled: true,
+          scrollControlDisabledMaxHeightRatio: 20,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.zero),
+          ),
+          clipBehavior: Clip.hardEdge,
+          elevation: 0,
+          context: context,
+          builder: (context) {
+            return CreateNewPost();
+          },
+        );
+      },
+      child: Icon(Icons.add, color: Colors.white),
     );
   }
 }

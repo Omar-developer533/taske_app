@@ -29,8 +29,9 @@ abstract class AppStyle {
     return TextStyle(fontSize: 14, fontWeight: FontWeight.w400);
   }
 
-  static styleMedium16(context) {
-    return TextStyle(fontSize: 16, fontWeight: FontWeight.w500);
+  static styleMedium16(context,{Color? color}) {
+    return TextStyle(fontSize: 16, fontWeight: FontWeight.w500,color: color);
+    
   }
 
   static styleMedium14(context) {
