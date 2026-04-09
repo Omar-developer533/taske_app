@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:taske_app/features/post/presentation/views/post_details_view.dart';
 import 'package:taske_app/features/post/presentation/views/widgets/post.dart';
 
 class PostViewBody extends StatelessWidget {
@@ -11,7 +12,18 @@ class PostViewBody extends StatelessWidget {
       itemBuilder: (context, index) {
         return Padding(
           padding: const EdgeInsets.only(left: 16, right: 16, top: 16),
-          child: Post(),
+          child: InkWell(
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) {
+                    return PostDetailsView();
+                  },
+                ),
+              );
+            },
+            child: Post(),
+          ),
         );
       },
     );

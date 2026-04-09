@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_icon_class/font_awesome_icon_class.dart';
 import 'package:taske_app/core/utls/app_style.dart';
+import 'package:taske_app/features/post/presentation/views/widgets/user_information.dart';
 
 class Post extends StatelessWidget {
   const Post({super.key});
@@ -18,20 +19,7 @@ class Post extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            ListTile(
-              contentPadding: EdgeInsets.all(0),
-              leading: SvgPicture.asset(
-                'assets/image/image.svg',
-                height: 36,
-                width: 36,
-              ),
-              title: Text('Mike Chin', style: AppStyle.styleMedium14(context)),
-              subtitle: Text('22ago', style: AppStyle.styleRegular12(context)),
-              trailing: IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.more_vert),
-              ),
-            ),
+            UserInformation(),
             Text(
               'scnd klm nkd  jnzl d klnj',
               style: AppStyle.styleMedium14(context),
@@ -39,8 +27,10 @@ class Post extends StatelessWidget {
               overflow: TextOverflow.ellipsis,
             ),
             Text(
-              'asjk SAJK axmx x JALX SALQAS X x aLXJJqx axqjxa jasbbxCJBb cajbJAKKJBC K NDASNJK NJK NJK NJK N JKN FAKn l n ln ln ln ',
+              'asjk SAJK axmx kjkjkjkjghhghhghghghfjhfghghfjfggfhfjhfghfx JALX SALQAS X x aLXJJqx axqjxa jasbbxCJBb cajbJAKKJBC K NDASNJK NJK NJK NJK N JKN FAKn l n ln ln ln ',
               style: AppStyle.styleRegular12(context),
+              overflow: TextOverflow.ellipsis,
+              maxLines: 3,
             ),
             Row(
               children: [
