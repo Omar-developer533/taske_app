@@ -96,7 +96,7 @@ class _AddNewCommentState extends State<AddNewComment> {
                           setState(() {});
                         }
                       },
-                      buttonName: 'Create',
+                      buttonName: 'post',
                       nameColor: Colors.white,
                     ),
                   ),

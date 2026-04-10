@@ -5,6 +5,7 @@ import 'package:font_awesome_icon_class/font_awesome_icon_class.dart';
 import 'package:taske_app/core/utls/app_style.dart';
 import 'package:taske_app/features/post/presentation/views/widgets/custom_button.dart';
 import 'package:taske_app/features/post/presentation/views/widgets/custom_container.dart';
+import 'package:taske_app/features/post/presentation/views/widgets/delete_post.dart';
 import 'package:taske_app/features/post/presentation/views/widgets/edite_post.dart';
 
 class PostDetails extends StatelessWidget {
@@ -48,36 +49,7 @@ class PostDetails extends StatelessWidget {
                   showDialog(
                     context: context,
                     builder: (context) {
-                      return Dialog(
-                        child: Padding(
-                          padding: EdgeInsets.all(24),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Text(
-                                'Delete Post',
-                                style: AppStyle.styleSemiBold16(context),
-                              ),
-                              SizedBox(height: 10),
-                              Text(
-                                'Are you sure want to delete this post? This will also delete all comments, This action cannot be undone',
-                              ),
-                              SizedBox(height: 15.h),
-                              CustomButton(
-                                buttonName: 'Delete',
-                                nameColor: Colors.white,
-                                buttonColor: Colors.red,
-                              ),
-                              SizedBox(height: 5.h),
-                              CustomButton(
-                                buttonName: 'Cancel',
-
-                                buttonColor: Colors.white,
-                              ),
-                            ],
-                          ),
-                        ),
-                      );
+                      return DeletePost();
                     },
                   );
                 },
