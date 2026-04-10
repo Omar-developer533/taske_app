@@ -10,13 +10,8 @@ class PostRepoImpl implements PostRepo {
   PostRepoImpl({required this.apiService});
 
   @override
-  Future<List<PostModel>> deletePost() async {
-    var result = await apiService.deleteRequest('');
-
-    List<PostModel> posts = result.map((e) {
-      return PostModel.fromjason(e);
-    }).toList();
-    return posts;
+  Future<void> deletePost(int id) async {
+    await apiService.deleteRequest('posts/$id');
   }
 
   @override
@@ -27,13 +22,12 @@ class PostRepoImpl implements PostRepo {
       return PostModel.fromjason(e);
     }).toList();
 
-    log(posts.toString());
     return posts;
   }
 
   @override
   Future<List<PostModel>> addComment(Map<String, dynamic> comment) async {
-    var result = await apiService.postRequest('', comment);
+    var result = await apiService.postRequest('posts/1', comment);
 
     List<PostModel> posts = result.map((e) {
       return PostModel.fromjason(e);
@@ -42,12 +36,9 @@ class PostRepoImpl implements PostRepo {
   }
 
   @override
-  Future<List<PostModel>> addPost(Map<String, dynamic> post) async {
-    var result = await apiService.postRequest('', post);
+  Future<PostModel> addPost(Map<String, dynamic> post) async {
+    var result = await apiService.postRequest('posts', post);
 
-    List<PostModel> posts = result.map((e) {
-      return PostModel.fromjason(e);
-    }).toList();
-    return posts;
+    return PostModel.fromjason(result);
   }
 }

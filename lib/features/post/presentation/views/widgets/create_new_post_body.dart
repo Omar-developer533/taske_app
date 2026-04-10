@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:taske_app/features/post/presentation/manager/post_provider.dart';
 import 'package:taske_app/features/post/presentation/views/widgets/custom_button.dart';
 import 'package:taske_app/features/post/presentation/views/widgets/custom_text_field.dart';
 
@@ -72,8 +74,17 @@ class _CreateNewPostBodyState extends State<CreateNewPostBody> {
               SizedBox(width: 16),
               Expanded(
                 child: CustomButton(
-                  onTap: () {
+                  onTap: () async {
                     if (formKey.currentState!.validate()) {
+                      final success = await context
+                          .read<PostProvider>()
+                          .addPost(context, {
+                            "title": titleEditingController.text,
+                            "body": "Hello world",
+                          });
+                      if (success) {
+                        Navigator.of(context).pop();
+                      }
                       nameEditingController.clear();
                       contentEditingController.clear();
                       titleEditingController.clear();

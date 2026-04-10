@@ -30,7 +30,7 @@ class PostDetailsView extends StatelessWidget {
           ],
         ),
       ),
-      body: PostDetailsViewBody(),
+      body: PostDetailsViewBody(post: post,),
     );
   }
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:taske_app/core/utls/app_style.dart';
+import 'package:taske_app/features/post/data/models/post_model.dart';
 import 'package:taske_app/features/post/presentation/views/widgets/add_new_comment.dart';
 
 import 'package:taske_app/features/post/presentation/views/widgets/comment_details_list_view.dart';
@@ -9,8 +10,8 @@ import 'package:taske_app/features/post/presentation/views/widgets/custom_button
 import 'package:taske_app/features/post/presentation/views/widgets/post_details.dart';
 
 class PostDetailsViewBody extends StatelessWidget {
-  const PostDetailsViewBody({super.key});
-
+  const PostDetailsViewBody({super.key, required this.post});
+  final PostModel post;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -18,7 +19,7 @@ class PostDetailsViewBody extends StatelessWidget {
       child: Column(
         children: [
           SizedBox(height: 16.h),
-          PostDetails(),
+          PostDetails(post: post,),
           SizedBox(height: 20.h),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

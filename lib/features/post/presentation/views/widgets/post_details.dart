@@ -3,14 +3,15 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_icon_class/font_awesome_icon_class.dart';
 import 'package:taske_app/core/utls/app_style.dart';
+import 'package:taske_app/features/post/data/models/post_model.dart';
 import 'package:taske_app/features/post/presentation/views/widgets/custom_button.dart';
 import 'package:taske_app/features/post/presentation/views/widgets/custom_container.dart';
 import 'package:taske_app/features/post/presentation/views/widgets/delete_post.dart';
 import 'package:taske_app/features/post/presentation/views/widgets/edite_post.dart';
 
 class PostDetails extends StatelessWidget {
-  const PostDetails({super.key});
-
+  const PostDetails({super.key, required this.post});
+  final PostModel post;
   @override
   Widget build(BuildContext context) {
     return CustomContainer(
@@ -49,7 +50,7 @@ class PostDetails extends StatelessWidget {
                   showDialog(
                     context: context,
                     builder: (context) {
-                      return DeletePost();
+                      return DeletePost(post: post,);
                     },
                   );
                 },
