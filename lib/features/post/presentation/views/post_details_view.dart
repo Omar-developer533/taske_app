@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_icon_class/font_awesome_icon_class.dart';
+import 'package:taske_app/features/post/data/models/post_model.dart';
 import 'package:taske_app/features/post/presentation/views/widgets/post_details_view_body.dart';
 
 class PostDetailsView extends StatelessWidget {
-  const PostDetailsView({super.key});
-
+  const PostDetailsView({super.key, required this.post});
+  final PostModel post;
   @override
   Widget build(BuildContext context) {
     return Scaffold(

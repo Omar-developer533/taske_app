@@ -1,12 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
 import 'package:taske_app/core/api_service.dart';
 import 'package:taske_app/features/post/data/repos/post_repo_impl.dart';
+import 'package:taske_app/features/post/presentation/manager/post_provider.dart';
 import 'package:taske_app/features/post/presentation/views/post_view.dart';
 
 void main() {
-  PostRepoImpl(apiService: ApiService()).getPosts();
-  runApp(TaskApp());
+  runApp(
+     ChangeNotifierProvider(
+      create: (_) =>
+          PostProvider(postRepo: PostRepoImpl(apiService: ApiService())),
+      child: const TaskApp(),
+    ),
+  );
 }
 
 class TaskApp extends StatelessWidget {

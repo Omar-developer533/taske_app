@@ -10,5 +10,8 @@ class PostModel {
 
   PostModel({required this.id, required this.title});
 
-
+  @override
+  String toString() {
+    return 'PostModel(id: $id, title: $title)';
+  }
 }

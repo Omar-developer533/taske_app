@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_icon_class/font_awesome_icon_class.dart';
 import 'package:taske_app/core/utls/app_style.dart';
+import 'package:taske_app/features/post/data/models/post_model.dart';
 import 'package:taske_app/features/post/presentation/views/widgets/user_information.dart';
 
 class Post extends StatelessWidget {
-  const Post({super.key});
-
+  const Post({super.key, required this.post});
+  final PostModel post;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -27,7 +28,7 @@ class Post extends StatelessWidget {
               overflow: TextOverflow.ellipsis,
             ),
             Text(
-              'asjk SAJK axmx kjkjkjkjghhghhghghghfjhfghghfjfggfhfjhfghfx JALX SALQAS X x aLXJJqx axqjxa jasbbxCJBb cajbJAKKJBC K NDASNJK NJK NJK NJK N JKN FAKn l n ln ln ln ',
+              post.title,
               style: AppStyle.styleRegular12(context),
               overflow: TextOverflow.ellipsis,
               maxLines: 3,
