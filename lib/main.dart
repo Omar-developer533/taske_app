@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:taske_app/core/api_service.dart';
+import 'package:taske_app/features/post/data/repos/post_repo_impl.dart';
 import 'package:taske_app/features/post/presentation/views/post_view.dart';
 
 void main() {
+  PostRepoImpl(apiService: ApiService()).getPosts();
   runApp(TaskApp());
 }
 
