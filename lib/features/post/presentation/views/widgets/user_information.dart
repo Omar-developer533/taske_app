@@ -8,7 +8,7 @@ class UserInformation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      contentPadding: EdgeInsets.all(0),
+      contentPadding: const EdgeInsets.all(0),
       leading: SvgPicture.asset(
         'assets/image/image.svg',
         height: 36,
@@ -16,7 +16,7 @@ class UserInformation extends StatelessWidget {
       ),
       title: Text('Mike Chin', style: AppStyle.styleMedium14(context)),
       subtitle: Text('22ago', style: AppStyle.styleRegular12(context)),
-      trailing: IconButton(onPressed: () {}, icon: Icon(Icons.more_vert)),
+      trailing: IconButton(onPressed: () {}, icon: const Icon(Icons.more_vert)),
     );
   }
 }

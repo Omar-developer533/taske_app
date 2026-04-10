@@ -9,23 +9,23 @@ class CustomFloatingActionButton extends StatelessWidget {
     return FloatingActionButton(
       elevation: 0,
       backgroundColor: Colors.deepOrangeAccent,
-      shape: CircleBorder(),
+      shape: const CircleBorder(),
       onPressed: () {
         showModalBottomSheet(
           isScrollControlled: true,
           scrollControlDisabledMaxHeightRatio: 20,
-          shape: RoundedRectangleBorder(
+          shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.zero),
           ),
           clipBehavior: Clip.hardEdge,
           elevation: 0,
           context: context,
           builder: (context) {
-            return CreateNewPost();
+            return const CreateNewPost();
           },
         );
       },
-      child: Icon(Icons.add, color: Colors.white),
+      child: const Icon(Icons.add, color: Colors.white),
     );
   }
 }

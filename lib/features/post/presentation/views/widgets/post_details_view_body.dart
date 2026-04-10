@@ -30,13 +30,13 @@ class PostDetailsViewBody extends StatelessWidget {
                 nameColor: Colors.white,
                 onTap: () {
                   showModalBottomSheet(
-                    shape: RoundedRectangleBorder(
+                    shape: const RoundedRectangleBorder(
                       borderRadius: BorderRadius.zero,
                     ),
                     scrollControlDisabledMaxHeightRatio: 20,
                     context: context,
                     builder: (context) {
-                      return AddNewComment();
+                      return const AddNewComment();
                     },
                   );
                 },
@@ -44,7 +44,7 @@ class PostDetailsViewBody extends StatelessWidget {
             ],
           ),
           SizedBox(height: 20.h),
-          Expanded(child: CommentDetailsListView()),
+          const Expanded(child: CommentDetailsListView()),
         ],
       ),
     );

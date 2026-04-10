@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_icon_class/font_awesome_icon_class.dart';
-import 'package:taske_app/features/post/presentation/views/widgets/create_new_post.dart';
+import 'package:taske_app/core/utls/app_style.dart';
 import 'package:taske_app/features/post/presentation/views/widgets/custom_floating_action_button.dart';
 import 'package:taske_app/features/post/presentation/views/widgets/post_viewBody.dart';
 
@@ -15,12 +15,9 @@ class PostView extends StatelessWidget {
           bottom: BorderSide(color: Colors.grey.shade200, width: 2),
         ),
         title: ListTile(
-          contentPadding: EdgeInsets.all(8),
-          title: Text(
-            'Posts',
-            style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
-          ),
-          subtitle: Text(
+          contentPadding: const EdgeInsets.all(8),
+          title: Text('Posts', style: AppStyle.styleMedium16(context)),
+          subtitle: const Text(
             '3 posts',
             style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
           ),
@@ -28,12 +25,12 @@ class PostView extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {},
-            icon: Icon(FontAwesomeIcons.arrowsRotate, size: 16),
+            icon: const Icon(FontAwesomeIcons.arrowsRotate, size: 16),
           ),
         ],
       ),
-      body: PostViewBody(),
-      floatingActionButton: CustomFloatingActionButton(),
+      body: const PostViewBody(),
+      floatingActionButton: const CustomFloatingActionButton(),
     );
   }
 }

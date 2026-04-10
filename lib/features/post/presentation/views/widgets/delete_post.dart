@@ -13,13 +13,13 @@ class DeletePost extends StatelessWidget {
   Widget build(BuildContext context) {
     return Dialog(
       child: Padding(
-        padding: EdgeInsets.all(24),
+        padding: const EdgeInsets.all(24),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             Text('Delete Post', style: AppStyle.styleSemiBold16(context)),
-            SizedBox(height: 10),
-            Text(
+            const SizedBox(height: 10),
+            const Text(
               'Are you sure want to delete this post? This will also delete all comments, This action cannot be undone',
             ),
             SizedBox(height: 15.h),

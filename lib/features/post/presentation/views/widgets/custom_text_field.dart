@@ -12,7 +12,7 @@ class CustomTextField extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(fieldName, style: AppStyle.styleSemiBold14(context)),
-        SizedBox(height: 5),
+        const SizedBox(height: 5),
         TextFormField(
           controller: controller,
           validator: validator,
@@ -31,14 +31,14 @@ class CustomTextField extends StatelessWidget {
   OutlineInputBorder getEnableBorder() {
     return OutlineInputBorder(
       borderRadius: BorderRadius.circular(12),
-      borderSide: BorderSide(color: Colors.grey, width: 1),
+      borderSide: const BorderSide(color: Colors.grey, width: 1),
     );
   }
 
   OutlineInputBorder getBorder() {
     return OutlineInputBorder(
       borderRadius: BorderRadius.circular(12),
-      borderSide: BorderSide(color: Colors.transparent, width: 0),
+      borderSide: const BorderSide(color: Colors.transparent, width: 0),
     );
   }
 }

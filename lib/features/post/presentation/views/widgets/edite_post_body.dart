@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:taske_app/core/utls/functions.dart';
+import 'package:taske_app/features/post/data/models/post_model.dart';
+import 'package:taske_app/features/post/presentation/manager/post_provider.dart';
 import 'package:taske_app/features/post/presentation/views/widgets/custom_button.dart';
 import 'package:taske_app/features/post/presentation/views/widgets/custom_text_field.dart';
 
 class EditePostBody extends StatefulWidget {
-  const EditePostBody({super.key});
-
+  const EditePostBody({super.key, required this.post});
+  final PostModel post;
   @override
   State<EditePostBody> createState() => _EditePostBodyState();
 }
@@ -34,7 +38,7 @@ class _EditePostBodyState extends State<EditePostBody> {
             },
             controller: titleEditingController,
           ),
-          SizedBox(height: 18),
+          const SizedBox(height: 18),
           CustomTextField(
             fieldName: 'Content',
             validator: (value) {
@@ -46,7 +50,7 @@ class _EditePostBodyState extends State<EditePostBody> {
             },
             controller: contentEditingController,
           ),
-          SizedBox(height: 30),
+          const SizedBox(height: 30),
           Row(
             children: [
               Expanded(
@@ -58,11 +62,24 @@ class _EditePostBodyState extends State<EditePostBody> {
                   buttonName: 'Cancel',
                 ),
               ),
-              SizedBox(width: 16),
+              const SizedBox(width: 16),
               Expanded(
                 child: CustomButton(
-                  onTap: () {
+                  onTap: () async {
                     if (formKey.currentState!.validate()) {
+                      final success = await context
+                          .read<PostProvider>()
+                          .updatePost(widget.post.id, {
+                            "title": titleEditingController.text,
+                            "body": contentEditingController.text,
+                          });
+                      if (success) {
+                        Navigator.pop(context);
+                        showSuccessSnackBar(
+                          context,
+                          "Post updated successfully ",
+                        );
+                      }
                       contentEditingController.clear();
                       titleEditingController.clear();
                       FocusScope.of(context).unfocus();

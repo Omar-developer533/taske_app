@@ -9,8 +9,8 @@ class CommentDetailsListView extends StatelessWidget {
     return ListView.builder(
       itemCount: 5,
       itemBuilder: (context, index) {
-        return Padding(
-          padding: const EdgeInsets.only(bottom: 16),
+        return const Padding(
+          padding: EdgeInsets.only(bottom: 16),
           child: CommentDetails(),
         );
       },

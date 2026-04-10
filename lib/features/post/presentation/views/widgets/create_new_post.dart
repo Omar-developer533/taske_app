@@ -16,9 +16,9 @@ class CreateNewPost extends StatelessWidget {
       child: SingleChildScrollView(
         child: Column(
           children: [
-            CreatNewPostHeader(),
-            SizedBox(height: 30),
-            CreateNewPostBody(),
+            const CreatNewPostHeader(),
+            const SizedBox(height: 30),
+            const CreateNewPostBody(),
 
             SizedBox(height: MediaQuery.sizeOf(context).height * .1),
           ],

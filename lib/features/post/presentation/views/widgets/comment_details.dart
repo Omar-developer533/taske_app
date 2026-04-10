@@ -13,7 +13,7 @@ class CommentDetails extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          UserInformation(),
+          const UserInformation(),
           SizedBox(height: 8.h),
           Text(
             'hvdvhsajkhaslkhahlkjhasjlkjvhv',

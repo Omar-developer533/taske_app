@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_icon_class/font_awesome_icon_class.dart';
 import 'package:taske_app/features/post/data/models/post_model.dart';
 import 'package:taske_app/features/post/presentation/views/widgets/post_details_view_body.dart';
 
@@ -20,10 +19,10 @@ class PostDetailsView extends StatelessWidget {
               onTap: () {
                 Navigator.pop(context);
               },
-              child: Icon(Icons.arrow_back, size: 16),
+              child: const Icon(Icons.arrow_back, size: 16),
             ),
-            SizedBox(width: 20),
-            Text(
+            const SizedBox(width: 20),
+            const Text(
               'Post Details',
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
             ),

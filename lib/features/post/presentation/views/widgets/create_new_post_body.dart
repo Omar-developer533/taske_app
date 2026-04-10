@@ -35,7 +35,7 @@ class _CreateNewPostBodyState extends State<CreateNewPostBody> {
               }
             },
           ),
-          SizedBox(height: 18),
+          const SizedBox(height: 18),
           CustomTextField(
             fieldName: 'Title',
             validator: (value) {
@@ -47,7 +47,7 @@ class _CreateNewPostBodyState extends State<CreateNewPostBody> {
             },
             controller: titleEditingController,
           ),
-          SizedBox(height: 18),
+          const SizedBox(height: 18),
           CustomTextField(
             fieldName: 'Content',
             validator: (value) {
@@ -59,7 +59,7 @@ class _CreateNewPostBodyState extends State<CreateNewPostBody> {
             },
             controller: contentEditingController,
           ),
-          SizedBox(height: 30),
+          const SizedBox(height: 30),
           Row(
             children: [
               Expanded(
@@ -71,7 +71,7 @@ class _CreateNewPostBodyState extends State<CreateNewPostBody> {
                   buttonName: 'Cancel',
                 ),
               ),
-              SizedBox(width: 16),
+              const SizedBox(width: 16),
               Expanded(
                 child: CustomButton(
                   onTap: () async {

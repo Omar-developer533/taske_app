@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_icon_class/font_awesome_icon_class.dart';
 import 'package:taske_app/core/utls/app_style.dart';
 import 'package:taske_app/features/post/data/models/post_model.dart';
-import 'package:taske_app/features/post/presentation/views/widgets/custom_button.dart';
 import 'package:taske_app/features/post/presentation/views/widgets/custom_container.dart';
 import 'package:taske_app/features/post/presentation/views/widgets/delete_post.dart';
 import 'package:taske_app/features/post/presentation/views/widgets/edite_post.dart';
@@ -21,7 +19,7 @@ class PostDetails extends StatelessWidget {
           Row(
             children: [
               SvgPicture.asset('assets/image/image.svg', height: 36, width: 36),
-              SizedBox(width: 8),
+              const SizedBox(width: 8),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -29,32 +27,32 @@ class PostDetails extends StatelessWidget {
                   Text('22ago', style: AppStyle.styleRegular12(context)),
                 ],
               ),
-              Spacer(),
+              const Spacer(),
               IconButton(
                 onPressed: () {
                   showModalBottomSheet(
-                    shape: RoundedRectangleBorder(
+                    shape: const RoundedRectangleBorder(
                       borderRadius: BorderRadius.zero,
                     ),
                     scrollControlDisabledMaxHeightRatio: 20,
                     context: context,
                     builder: (context) {
-                      return EditePost();
+                      return EditePost(post: post);
                     },
                   );
                 },
-                icon: Icon(FontAwesomeIcons.penToSquare, size: 16),
+                icon: const Icon(FontAwesomeIcons.penToSquare, size: 16),
               ),
               IconButton(
                 onPressed: () {
                   showDialog(
                     context: context,
                     builder: (context) {
-                      return DeletePost(post: post,);
+                      return DeletePost(post: post);
                     },
                   );
                 },
-                icon: Icon(
+                icon: const Icon(
                   FontAwesomeIcons.trashCan,
                   size: 16,
                   color: Colors.red,
@@ -62,7 +60,7 @@ class PostDetails extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: 30),
+          const SizedBox(height: 30),
           Text(
             'scnd klm nkd  jnzl d klnj',
             style: AppStyle.styleMedium14(context),
@@ -73,8 +71,8 @@ class PostDetails extends StatelessWidget {
             'asjkuhjkghkjkhjhjhjklhkhg SAJK axmx x JALX SALQAS X x aLXJJqx axqjxa jasbbxCJBb cajbJAKKJBC K NDASNJK NJK NJK NJK N JKN FAKn l n ln ln lnjkkjghhjg ',
             style: AppStyle.styleRegular12(context),
           ),
-          SizedBox(height: 20),
-          Divider(height: 20),
+          const SizedBox(height: 20),
+          const Divider(height: 20),
           Row(
             children: [
               IconButton(

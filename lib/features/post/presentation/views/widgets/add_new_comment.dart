@@ -32,7 +32,7 @@ class _AddNewCommentState extends State<AddNewComment> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              AddNewCommentHeader(),
+              const AddNewCommentHeader(),
               SizedBox(height: 30.h),
               CustomTextField(
                 controller: nameEditingController,

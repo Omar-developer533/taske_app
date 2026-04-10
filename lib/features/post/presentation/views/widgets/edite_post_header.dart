@@ -7,8 +7,8 @@ class EditePostHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 16),
-      decoration: BoxDecoration(color: Colors.white38),
+      padding: const EdgeInsets.symmetric(vertical: 16),
+      decoration: const BoxDecoration(color: Colors.white38),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

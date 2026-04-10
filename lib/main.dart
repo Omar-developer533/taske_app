@@ -26,7 +26,7 @@ class TaskApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (_, child) {
-        return MaterialApp(debugShowCheckedModeBanner: false, home: PostView());
+        return const MaterialApp(debugShowCheckedModeBanner: false, home: PostView());
       },
     );
   }

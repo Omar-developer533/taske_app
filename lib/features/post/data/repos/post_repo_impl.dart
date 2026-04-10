@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:taske_app/core/api_service.dart';
 import 'package:taske_app/features/post/data/models/post_model.dart';
 import 'package:taske_app/features/post/data/repos/post_repo.dart';
@@ -26,19 +24,15 @@ class PostRepoImpl implements PostRepo {
   }
 
   @override
-  Future<List<PostModel>> addComment(Map<String, dynamic> comment) async {
-    var result = await apiService.postRequest('posts/1', comment);
-
-    List<PostModel> posts = result.map((e) {
-      return PostModel.fromjason(e);
-    }).toList();
-    return posts;
-  }
-
-  @override
   Future<PostModel> addPost(Map<String, dynamic> post) async {
     var result = await apiService.postRequest('posts', post);
 
+    return PostModel.fromjason(result);
+  }
+
+  @override
+  Future<PostModel> updatePost(int id, Map<String, dynamic> post) async {
+    var result = await apiService.putRequest('posts/$id', post);
     return PostModel.fromjason(result);
   }
 }

@@ -26,7 +26,7 @@ class _PostViewBodyState extends State<PostViewBody> {
     return Consumer<PostProvider>(
       builder: (context, provider, child) {
         if (provider.isLoading) {
-          return Center(child: CircularProgressIndicator());
+          return const Center(child: CircularProgressIndicator());
         } else if (provider.error != null) {
           return Text(provider.error!);
         }

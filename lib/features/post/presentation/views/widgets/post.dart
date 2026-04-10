@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_icon_class/font_awesome_icon_class.dart';
 import 'package:taske_app/core/utls/app_style.dart';
 import 'package:taske_app/features/post/data/models/post_model.dart';
@@ -20,7 +19,7 @@ class Post extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            UserInformation(),
+            const UserInformation(),
             Text(
               'scnd klm nkd  jnzl d klnj',
               style: AppStyle.styleMedium14(context),
