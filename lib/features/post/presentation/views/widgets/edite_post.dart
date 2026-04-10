@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:taske_app/features/post/presentation/views/widgets/creat_new_post_header.dart';
-import 'package:taske_app/features/post/presentation/views/widgets/create_new_post_body.dart';
 
-class CreateNewPost extends StatelessWidget {
-  const CreateNewPost({super.key});
+import 'package:taske_app/features/post/presentation/views/widgets/edite_post_body.dart';
+import 'package:taske_app/features/post/presentation/views/widgets/edite_post_header.dart';
+
+class EditePost extends StatelessWidget {
+  const EditePost({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,9 +17,9 @@ class CreateNewPost extends StatelessWidget {
       child: SingleChildScrollView(
         child: Column(
           children: [
-            CreatNewPostHeader(),
+            EditePostHeader(),
             SizedBox(height: 30),
-            CreateNewPostBody(),
+            EditePostBody(),
 
             SizedBox(height: MediaQuery.sizeOf(context).height * .1),
           ],

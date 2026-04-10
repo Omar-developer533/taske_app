@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:taske_app/core/utls/app_style.dart';
 
-class CreatNewPostHeader extends StatelessWidget {
-  const CreatNewPostHeader({super.key});
+class EditePostHeader extends StatelessWidget {
+  const EditePostHeader({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class CreatNewPostHeader extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text('Create New Post', style: AppStyle.styleSemiBold16(context)),
+              Text('Edit Post', style: AppStyle.styleSemiBold16(context)),
               InkWell(
                 onTap: () {
                   Navigator.pop(context);
@@ -25,11 +25,12 @@ class CreatNewPostHeader extends StatelessWidget {
             ],
           ),
           Text(
-            'Share your thoughts with the community',
+            'Update your post details below',
             style: AppStyle.styleRegular12(context),
           ),
         ],
       ),
     );
+    ;
   }
 }
