@@ -73,16 +73,17 @@ class _EditePostBodyState extends State<EditePostBody> {
                             "title": titleEditingController.text,
                             "body": contentEditingController.text,
                           });
+                      Navigator.pop(context);
                       if (success) {
-                        Navigator.pop(context);
                         showSuccessSnackBar(
                           context,
                           "Post updated successfully ",
                         );
+                        await context.read<PostProvider>().getPosts();
                       }
                       contentEditingController.clear();
                       titleEditingController.clear();
-                      FocusScope.of(context).unfocus();
+                      // FocusScope.of(context).unfocus();
                       autovalidateMode = AutovalidateMode.disabled;
                     } else {
                       autovalidateMode = AutovalidateMode.always;

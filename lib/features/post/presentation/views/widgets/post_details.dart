@@ -67,10 +67,7 @@ class PostDetails extends StatelessWidget {
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
           ),
-          Text(
-            'asjkuhjkghkjkhjhjhjklhkhg SAJK axmx x JALX SALQAS X x aLXJJqx axqjxa jasbbxCJBb cajbJAKKJBC K NDASNJK NJK NJK NJK N JKN FAKn l n ln ln lnjkkjghhjg ',
-            style: AppStyle.styleRegular12(context),
-          ),
+          Text(post.title, style: AppStyle.styleRegular12(context)),
           const SizedBox(height: 20),
           const Divider(height: 20),
           Row(

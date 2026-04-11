@@ -54,19 +54,21 @@ class PostProvider extends ChangeNotifier {
     }
   }
 
-
   Future<bool> updatePost(int id, Map<String, dynamic> post) async {
-  try {
-     await postRepo.updatePost(id, post);
+    try {
+      final updatedPost = await postRepo.updatePost(id, post);
+      int index = posts.indexWhere((p) => p.id == id);
 
-    
-
-    notifyListeners();
-    return true;
-  } catch (e) {
-    error = e.toString();
-    notifyListeners();
-    return false;
+      if (index != -1) {
+        posts[index] = updatedPost;
+        posts = List.from(posts);
+      }
+      notifyListeners();
+      return true;
+    } catch (e) {
+      error = e.toString();
+      notifyListeners();
+      return false;
+    }
   }
-}
 }

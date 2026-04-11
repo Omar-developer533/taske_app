@@ -29,6 +29,7 @@ class DeletePost extends StatelessWidget {
                   context,
                   post.id,
                 );
+                Navigator.pop(context);
                 if (success) {
                   Navigator.pop(context);
                 }
